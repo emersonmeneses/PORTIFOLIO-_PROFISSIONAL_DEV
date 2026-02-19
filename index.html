@@ -66,93 +66,94 @@
       line-height: 1.7;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      margin: 10px;
-      background: #2563eb;
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-      background: #7c3aed;
-    }
-
-    /* HERO */
-    .hero {
+    /* HERO TOPO PROFISSIONAL */
+    .hero-topo {
+      position: relative;
+      height: 100vh;
+      background: url('emerson-dev-bg.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
     }
 
-    /* FOTO PERFIL REDONDA */
-    .foto-perfil {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #00d4ff;
-      box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
-      animation: float 3s ease-in-out infinite;
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
     }
 
-    @keyframes float {
-      0%,100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
+    .conteudo-hero {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      animation: fadeUp 1.5s ease;
     }
 
-    .hero h1 {
-      font-size: 2.8rem;
+    .conteudo-hero h1 {
+      font-size: 2.5rem;
+      color: #fff;
+    }
+
+    .conteudo-hero span {
+      color: #00d4ff;
+    }
+
+    .btn-hero {
+      display: inline-block;
       margin-top: 20px;
+      padding: 15px 30px;
+      background: linear-gradient(45deg,#00d4ff,#2563eb);
+      color: #fff;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.4s;
     }
 
-    .cargo-box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 15px;
+    .btn-hero:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #00d4ff;
     }
 
-    .cargo-box img {
-      width: 60px;
-      border-radius: 10px;
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    /* SOBRE COM FOTO AO LADO */
-    .sobre {
+    /* DIFERENCIAIS */
+    .diferenciais {
+      display: grid;
+      gap: 20px;
       padding: 60px 20px;
+      text-align: center;
     }
 
-    .container-sobre {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
+    .item {
+      background: #111827;
+      padding: 25px;
+      border-radius: 15px;
+      font-size: 18px;
+      border: 1px solid #00d4ff;
+      animation: fadeUp 1s ease;
     }
 
-    .foto-sobre {
-      width: 280px;
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.5);
-    }
-
+    /* SOBRE (SEM FOTO) */
     .texto-sobre {
-      max-width: 500px;
-      text-align: left;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
     }
 
     .texto-sobre h2 {
       color: #00d4ff;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     /* CARDS */
@@ -174,20 +175,6 @@
     .card:hover {
       transform: translateY(-10px);
       box-shadow: 0 0 30px rgba(124,58,237,0.4);
-    }
-
-    /* STATS */
-    .stats {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .stat h3 {
-      font-size: 2.5rem;
-      color: #7c3aed;
     }
 
     /* PROJETOS */
@@ -214,13 +201,6 @@
       text-align: center;
     }
 
-    .footer-img {
-      margin-top: 40px;
-      width: 120px;
-      border-radius: 50%;
-      opacity: 0.8;
-    }
-
     .hidden {
       opacity: 0;
       transform: translateY(30px);
@@ -237,41 +217,42 @@
 
 <div class="efeito-binario"></div>
 
-<!-- HERO -->
-<section class="hero">
-  <img src="EMERSON.JAVA.jpeg" alt="Foto Emerson" class="foto-perfil">
-  <h1>Emerson Santos</h1>
+<!-- HERO TOPO PROFISSIONAL -->
+<section class="hero-topo">
+  <div class="overlay"></div>
 
-  <div class="cargo-box">
-    <img src="EMERSON.HTML.jpeg" alt="Cargo">
-    <h3>Desenvolvedor Java | Mobile Android</h3>
-  </div>
+  <div class="conteudo-hero">
+    <h1>
+      Desenvolvedor Java & Android <br>
+      Soluções Profissionais em <span>Software e Sistemas</span>
+    </h1>
 
-  <p>Criando soluções inteligentes e sistemas funcionais que resolvem problemas reais com tecnologia.</p>
+    <p>Criação de sistemas reais: controle financeiro, lista de presença e aplicativos Android funcionais.</p>
 
-  <div>
-    <a href="#projetos" class="btn">Ver Projetos</a>
-    <a href="#contato" class="btn">Falar Comigo</a>
+    <a href="#projetos" class="btn-hero">VER PROJETOS</a>
   </div>
 </section>
 
-<!-- SOBRE COM FOTO AO LADO -->
-<section class="sobre hidden">
-  <div class="container-sobre">
-    
-    <img src="EMERSON_DEV.jpeg" alt="Emerson trabalhando" class="foto-sobre">
+<!-- DIFERENCIAIS -->
+<section class="diferenciais hidden">
+  <div class="item">✔ Lógica de Programação Avançada</div>
+  <div class="item">✔ Sistemas Reais Desenvolvidos</div>
+  <div class="item">✔ Foco em Java e Android</div>
+  <div class="item">✔ Aprendizado Contínuo e Disciplina</div>
+</section>
 
-    <div class="texto-sobre">
-      <h2>Sobre Mim</h2>
-      <p>
-        Sou estudante de Análise e Desenvolvimento de Sistemas, focado em desenvolvimento Java e aplicações mobile Android. 
-        Desenvolvo sistemas funcionais voltados para resolver problemas reais, como controle financeiro, portfólio web e sistema de lista de presença.
-      </p>
-      <p>
-        Tenho forte lógica de programação, disciplina nos estudos e paixão por transformar ideias em soluções tecnológicas reais.
-      </p>
-    </div>
-
+<!-- SOBRE SEM FOTO -->
+<section class="hidden">
+  <div class="texto-sobre">
+    <h2>Sobre Mim</h2>
+    <p>
+      Sou estudante de Análise e Desenvolvimento de Sistemas, focado em desenvolvimento Java e aplicações mobile Android. 
+      Desenvolvo sistemas funcionais voltados para resolver problemas reais, como controle financeiro, portfólio web e sistema de lista de presença.
+    </p>
+    <p>
+      Tenho forte lógica de programação, disciplina nos estudos e paixão por transformar ideias em soluções tecnológicas reais.
+      Meu objetivo é atuar remotamente para empresas internacionais, criando aplicações robustas e úteis.
+    </p>
   </div>
 </section>
 
@@ -309,10 +290,8 @@
 <section id="contato" class="contato hidden">
   <h2>Contato</h2>
   <p>Estou disponível para oportunidades remotas e projetos internacionais.</p>
-  <a href="https://wa.me/557988027759" class="btn">WhatsApp</a>
+  <a href="https://wa.me/557988027759" class="btn-hero">WhatsApp</a>
   <p>Email: emerson88027759@gmail.com</p>
-
-  <img src="EMERSON_DEV.jpeg" class="footer-img" alt="Emerson">
   <p>© 2025 Emerson Santos. Todos os direitos reservados.</p>
 </section>
 
