@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emerson Santos | Desenvolvedor Java</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f172a, #000000);
+      color: #fff;
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    h1, h2, h3 {
+      color: #38bdf8;
+    }
+
+    p {
+      color: #cbd5e1;
+      line-height: 1.7;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 10px;
+      background: #2563eb;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: #7c3aed;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero img {
+      width: 180px;
+      border-radius: 50%;
+      box-shadow: 0 0 30px rgba(56,189,248,0.4);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-top: 20px;
+    }
+
+    .cargo-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .cargo-box img {
+      width: 60px;
+      border-radius: 10px;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #111827;
+      padding: 30px;
+      border-radius: 12px;
+      transition: 0.4s;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(124,58,237,0.4);
+    }
+
+    /* STATS */
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .stat h3 {
+      font-size: 2.5rem;
+      color: #7c3aed;
+    }
+
+    /* PROJETOS */
+    .projetos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .projeto-card {
+      background: #0f172a;
+      padding: 25px;
+      border-radius: 12px;
+      transition: 0.4s;
+    }
+
+    .projeto-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(56,189,248,0.4);
+    }
+
+    /* CONTATO */
+    .contato {
+      text-align: center;
+    }
+
+    .footer-img {
+      margin-top: 40px;
+      width: 120px;
+      border-radius: 50%;
+      opacity: 0.8;
+    }
+
+    /* ANIMAÇÃO SCROLL */
+    .hidden {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="perfil.jpg" alt="Foto Emerson">
+    <h1>Emerson Santos</h1>
+
+    <div class="cargo-box">
+      <img src="cargo.jpg" alt="Cargo">
+      <h3>Desenvolvedor Java | Mobile Android</h3>
+    </div>
+
+    <p>Criando soluções inteligentes e sistemas funcionais que resolvem problemas reais com tecnologia.</p>
+
+    <div>
+      <a href="#projetos" class="btn">Ver Projetos</a>
+      <a href="#contato" class="btn">Falar Comigo</a>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="hidden">
+    <h2>Sobre Mim</h2>
+    <p>
+      Sou estudante de Análise e Desenvolvimento de Sistemas, com foco em desenvolvimento de aplicações e soluções práticas para problemas reais do dia a dia...
+    </p>
+    <br>
+    <p>
+      Meu objetivo é atuar remotamente para empresas internacionais, criando aplicações robustas e úteis.
+    </p>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section class="hidden">
+    <h2>Serviços & Habilidades</h2>
+    <div class="cards">
+      <div class="card">📱 Desenvolvimento Mobile Android</div>
+      <div class="card">🖥️ Suporte Técnico em Informática</div>
+      <div class="card">🔧 Manutenção e Configuração de Computadores</div>
+      <div class="card">🔗 Integração de Sistemas</div>
+    </div>
+  </section>
+
+  <!-- ESTATÍSTICAS -->
+  <section class="hidden">
+    <h2>Estatísticas</h2>
+    <div class="stats">
+      <div class="stat">
+        <h3 class="counter" data-target="12">0</h3>
+        <p>Projetos Desenvolvidos</p>
+      </div>
+      <div class="stat">
+        <h3 class="counter" data-target="8">0</h3>
+        <p>Sistemas Estudados</p>
+      </div>
+      <div class="stat">
+        <h3 class="counter" data-target="3">0</h3>
+        <p>Anos de Aprendizado</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section id="projetos" class="hidden">
+    <h2>Projetos em Destaque</h2>
+    <div class="projetos">
+      <div class="projeto-card">
+        <h3>Sistema de Controle Financeiro Escolar</h3>
+        <p>Automação de mensalidades e registros financeiros utilizando Java.</p>
+      </div>
+      <div class="projeto-card">
+        <h3>Lista de Presença com Banco de Dados</h3>
+        <p>Integração front-end e back-end com sincronização online.</p>
+      </div>
+      <div class="projeto-card">
+        <h3>Portfólio Web Profissional</h3>
+        <p>Desenvolvido com HTML, CSS e JavaScript com foco estratégico.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="contato hidden">
+    <h2>Contato</h2>
+    <p>Estou disponível para oportunidades remotas e projetos internacionais.</p>
+    <a href="https://wa.me/557988027759" class="btn">WhatsApp</a>
+    <p>Email: emerson88027759@gmail.com</p>
+
+    <img src="footer.jpg" class="footer-img" alt="Emerson">
+    <p>© 2025 Emerson Santos. Todos os direitos reservados.</p>
+  </section>
+
+  <script>
+    // Scroll Reveal
+    const elements = document.querySelectorAll('.hidden');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    elements.forEach(el => observer.observe(el));
+
+    // Contadores animados
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
+
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const inc = target / speed;
+
+        if(count < target){
+          counter.innerText = Math.ceil(count + inc);
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  </script>
+
+</body>
+</html>
