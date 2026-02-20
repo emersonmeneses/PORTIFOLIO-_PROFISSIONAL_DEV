@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emerson Santos | Desenvolvedor Java</title>
 
+  <!-- Fonte profissional -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
+    /* RESET GLOBAL */
     * {
       margin: 0;
       padding: 0;
@@ -19,11 +21,10 @@
     body {
       background: linear-gradient(135deg, #0f172a, #000000);
       color: #fff;
-      position: relative;
       overflow-x: hidden;
     }
 
-    /* EFEITO BINÁRIO */
+    /* FUNDO COM EFEITO TECNOLÓGICO */
     .efeito-binario {
       position: fixed;
       top: 0;
@@ -34,23 +35,6 @@
       background-image: radial-gradient(rgba(0,255,255,0.08) 1px, transparent 1px);
       background-size: 20px 20px;
       z-index: -1;
-    }
-
-    body::before {
-      content: "0101 0011 1100 <html> { } </> 1010 0101 CSS Java Android";
-      position: fixed;
-      top: 10%;
-      left: -30%;
-      font-size: 20px;
-      color: rgba(0,255,255,0.08);
-      animation: moverBinario 25s linear infinite;
-      white-space: nowrap;
-      z-index: -1;
-    }
-
-    @keyframes moverBinario {
-      from { transform: translateX(0); }
-      to { transform: translateX(200%); }
     }
 
     section {
@@ -66,7 +50,7 @@
       line-height: 1.7;
     }
 
-    /* HERO TOPO PROFISSIONAL */
+    /* ================= HERO TOPO ================= */
     .hero-topo {
       position: relative;
       height: 100vh;
@@ -77,17 +61,30 @@
       text-align: center;
     }
 
+    /* Camada escura sobre a imagem */
     .overlay {
       position: absolute;
       inset: 0;
       background: rgba(0,0,0,0.6);
     }
 
+    /* Conteúdo central do topo */
     .conteudo-hero {
       position: relative;
       z-index: 2;
       max-width: 700px;
       animation: fadeUp 1.5s ease;
+    }
+
+    /* FOTO DE PERFIL REDONDA CENTRALIZADA */
+    .foto-perfil-topo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #00d4ff;
+      box-shadow: 0 0 25px rgba(0,212,255,0.6);
+      margin-bottom: 20px;
     }
 
     .conteudo-hero h1 {
@@ -117,17 +114,11 @@
     }
 
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    /* DIFERENCIAIS */
+    /* ================= DIFERENCIAIS ================= */
     .diferenciais {
       display: grid;
       gap: 20px;
@@ -141,14 +132,27 @@
       border-radius: 15px;
       font-size: 18px;
       border: 1px solid #00d4ff;
-      animation: fadeUp 1s ease;
     }
 
-    /* SOBRE (SEM FOTO) */
+    /* ================= SOBRE MIM ================= */
+    .container-sobre {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    /* FOTO AO LADO DO TEXTO */
+    .foto-sobre {
+      width: 260px; /* tamanho médio */
+      border-radius: 20px; /* bordas arredondadas */
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
     .texto-sobre {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
+      max-width: 520px;
+      text-align: left;
     }
 
     .texto-sobre h2 {
@@ -156,7 +160,7 @@
       margin-bottom: 15px;
     }
 
-    /* CARDS */
+    /* ================= CARDS ================= */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -177,39 +181,28 @@
       box-shadow: 0 0 30px rgba(124,58,237,0.4);
     }
 
-    /* PROJETOS */
-    .projetos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .projeto-card {
-      background: #0f172a;
-      padding: 25px;
-      border-radius: 12px;
-      transition: 0.4s;
-    }
-
-    .projeto-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(56,189,248,0.4);
-    }
-
-    .contato {
-      text-align: center;
-    }
-
+    /* ================= ANIMAÇÃO APENAS TEXTO ================= */
     .hidden {
       opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
+      transform: translateY(40px);
+      transition: all 1s ease;
     }
 
     .show {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      .container-sobre {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .texto-sobre {
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -217,11 +210,14 @@
 
 <div class="efeito-binario"></div>
 
-<!-- HERO TOPO PROFISSIONAL -->
+<!-- ================= HERO TOPO ================= -->
 <section class="hero-topo">
   <div class="overlay"></div>
 
   <div class="conteudo-hero">
+    <!-- FOTO DE PERFIL CENTRAL -->
+    <img src="perfil-emerson.jpg" alt="Foto Emerson" class="foto-perfil-topo">
+
     <h1>
       Desenvolvedor Java & Android <br>
       Soluções Profissionais em <span>Software e Sistemas</span>
@@ -233,7 +229,7 @@
   </div>
 </section>
 
-<!-- DIFERENCIAIS -->
+<!-- ================= DIFERENCIAIS ================= -->
 <section class="diferenciais hidden">
   <div class="item">✔ Lógica de Programação Avançada</div>
   <div class="item">✔ Sistemas Reais Desenvolvidos</div>
@@ -241,14 +237,15 @@
   <div class="item">✔ Aprendizado Contínuo e Disciplina</div>
 </section>
 
-<!-- SOBRE SEM FOTO -->
-<section class="sobre hidden">
+<!-- ================= SOBRE MIM ================= -->
+<section class="sobre">
   <div class="container-sobre">
-
-    <!-- FOTO SOBRE MIM -->
+    
+    <!-- FOTO MÉDIA AO LADO DO TEXTO -->
     <img src="EMERSON_DEV.jpeg" alt="Emerson desenvolvedor" class="foto-sobre">
 
-    <div class="texto-sobre">
+    <!-- TEXTO COM ANIMAÇÃO -->
+    <div class="texto-sobre hidden">
       <h2>Sobre Mim</h2>
       <p>
         Sou estudante de Análise e Desenvolvimento de Sistemas, focado em desenvolvimento Java e aplicações mobile Android.
@@ -262,7 +259,7 @@
   </div>
 </section>
 
-<!-- HABILIDADES -->
+<!-- ================= HABILIDADES ================= -->
 <section class="hidden">
   <h2>Serviços & Habilidades</h2>
   <div class="cards">
@@ -273,30 +270,8 @@
   </div>
 </section>
 
-<!-- PROJETOS -->
-<section class="sobre">
-  <div class="container-sobre">
-    
-    <!-- FOTO LADO ESQUERDO -->
-    <img src="EMERSON_DEV.jpg" alt="Emerson desenvolvedor" class="foto-sobre">
-
-    <!-- TEXTO COM ANIMAÇÃO -->
-    <div class="texto-sobre hidden">
-      <h2>Sobre Mim</h2>
-      <p>
-        Sou estudante de Análise e Desenvolvimento de Sistemas, focado em desenvolvimento Java e aplicações mobile Android. 
-        Desenvolvo sistemas funcionais voltados para resolver problemas reais, como controle financeiro, portfólio web e sistema de lista de presença.
-      </p>
-      <p>
-        Tenho forte lógica de programação, disciplina nos estudos e paixão por transformar ideias em soluções tecnológicas reais.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTATO -->
-<section id="contato" class="contato hidden">
+<!-- ================= CONTATO ================= -->
+<section id="contato" class="hidden">
   <h2>Contato</h2>
   <p>Estou disponível para oportunidades remotas e projetos internacionais.</p>
   <a href="https://wa.me/557988027759" class="btn-hero">WhatsApp</a>
@@ -305,6 +280,7 @@
 </section>
 
 <script>
+  // ANIMAÇÃO AO ROLAR A PÁGINA (apenas elementos com classe hidden)
   const elements = document.querySelectorAll('.hidden');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
