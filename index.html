@@ -4,30 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emerson Santos | Desenvolvedor Java</title>
-  
- 
-  <!-- Fonte profissional -->
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* RESET GLOBAL */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
       scroll-behavior: smooth;
-      
     }
-    
-    #contato {
-  text-align: center;      /* centraliza textos */
-  display: flex;
-  flex-direction: column;  /* organiza em coluna */
-  align-items: center;     /* centraliza horizontalmente */
-  justify-content: center; /* centraliza verticalmente (se tiver altura grande) */
-  gap: 15px;               /* espaço entre os elementos */
-}
 
     body {
       background: linear-gradient(135deg, #0f172a, #000000);
@@ -35,7 +22,6 @@
       overflow-x: hidden;
     }
 
-    /* FUNDO COM EFEITO TECNOLÓGICO */
     .efeito-binario {
       position: fixed;
       top: 0;
@@ -54,6 +40,7 @@
 
     h1, h2, h3 {
       color: #38bdf8;
+      text-align: center;
     }
 
     p {
@@ -61,7 +48,7 @@
       line-height: 1.7;
     }
 
-    /* ================= HERO TOPO ================= */
+    /* HERO */
     .hero-topo {
       position: relative;
       height: 100vh;
@@ -72,14 +59,12 @@
       text-align: center;
     }
 
-    /* Camada escura sobre a imagem */
     .overlay {
       position: absolute;
       inset: 0;
       background: rgba(0,0,0,0.6);
     }
 
-    /* Conteúdo central do topo */
     .conteudo-hero {
       position: relative;
       z-index: 2;
@@ -87,7 +72,6 @@
       animation: fadeUp 1.5s ease;
     }
 
-    /* FOTO DE PERFIL REDONDA CENTRALIZADA */
     .foto-perfil-topo {
       width: 160px;
       height: 160px;
@@ -129,11 +113,10 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ================= DIFERENCIAIS ================= */
+    /* DIFERENCIAIS */
     .diferenciais {
       display: grid;
       gap: 20px;
-      padding: 60px 20px;
       text-align: center;
     }
 
@@ -145,33 +128,44 @@
       border: 1px solid #00d4ff;
     }
 
-    /* ================= SOBRE MIM ================= */
+    /* SOBRE */
     .container-sobre {
       display: flex;
-      align-items: center;
+      align-items: stretch;
       justify-content: center;
       gap: 40px;
       flex-wrap: wrap;
     }
 
-    /* FOTO AO LADO DO TEXTO */
     .foto-sobre {
-      width: 260px; /* tamanho médio */
-      border-radius: 20px; /* bordas arredondadas */
+      width: 320px;
+      object-fit: cover;
+      border-radius: 20px;
       box-shadow: 0 0 20px rgba(0,0,0,0.4);
     }
 
     .texto-sobre {
       max-width: 520px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       text-align: left;
     }
 
-    .texto-sobre h2 {
-      color: #00d4ff;
-      margin-bottom: 15px;
+    /* PONTOS FORTES CENTRALIZADO */
+    .pontos-fortes {
+      text-align: center;
     }
 
-    /* ================= CARDS ================= */
+    .cards-center {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    /* CARDS */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -185,6 +179,7 @@
       border-radius: 12px;
       transition: 0.4s;
       box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      text-align: center;
     }
 
     .card:hover {
@@ -192,7 +187,6 @@
       box-shadow: 0 0 30px rgba(124,58,237,0.4);
     }
 
-    /* ================= ANIMAÇÃO APENAS TEXTO ================= */
     .hidden {
       opacity: 0;
       transform: translateY(40px);
@@ -204,7 +198,14 @@
       transform: translateY(0);
     }
 
-    /* RESPONSIVO */
+    #contato {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
     @media (max-width: 768px) {
       .container-sobre {
         flex-direction: column;
@@ -221,26 +222,21 @@
 
 <div class="efeito-binario"></div>
 
-<!-- ================= HERO TOPO ================= -->
+<!-- HERO -->
 <section class="hero-topo">
   <div class="overlay"></div>
-
   <div class="conteudo-hero">
-    <!-- FOTO DE PERFIL CENTRAL -->
     <img src="EMERSON.JAVA.jpeg" alt="Foto Emerson" class="foto-perfil-topo">
-
     <h1>
       Desenvolvedor Java & Android <br>
       Soluções Profissionais em <span>Software e Sistemas</span>
     </h1>
-
     <p>Criação de sistemas reais: controle financeiro, lista de presença e aplicativos Android funcionais.</p>
-
-    <a href="#projetos" class="btn-hero">VER PROJETOS</a>
+    <a href="#contato" class="btn-hero">ENTRAR EM CONTATO</a>
   </div>
 </section>
 
-<!-- ================= DIFERENCIAIS ================= -->
+<!-- DIFERENCIAIS -->
 <section class="diferenciais hidden">
   <div class="item">✔ Lógica de Programação Avançada</div>
   <div class="item">✔ Sistemas Reais Desenvolvidos</div>
@@ -248,44 +244,51 @@
   <div class="item">✔ Aprendizado Contínuo e Disciplina</div>
 </section>
 
-<!-- ================= SOBRE MIM ================= -->
+<!-- SOBRE MIM -->
 <section class="sobre">
   <div class="container-sobre">
-    
-    <!-- FOTO MÉDIA AO LADO DO TEXTO -->
     <img src="EMERSON_DEV.jpeg" alt="Emerson desenvolvedor" class="foto-sobre">
 
-    <!-- TEXTO COM ANIMAÇÃO -->
     <div class="texto-sobre hidden">
       <h2>Sobre Mim</h2>
       <p>
         Sou estudante de Análise e Desenvolvimento de Sistemas, com foco em desenvolvimento de aplicações e soluções práticas para problemas reais do dia a dia. Tenho dedicado meus estudos principalmente à linguagem Java, desenvolvimento mobile e criação de sistemas funcionais que resolvem necessidades reais, como controle financeiro, lista de presença e organização de dados.
-
-Meu aprendizado é baseado em projetos próprios, onde aplico na prática cada conceito estudado. Ao longo da minha jornada, venho construindo sistemas completos, desde a lógica de funcionamento até a organização de interface e banco de dados, buscando sempre clareza, organização e eficiência no código.
-
-Tenho grande interesse em trabalhar com desenvolvimento internacional, criando aplicações robustas e úteis, mantendo uma mentalidade de evolução constante e aprendizado contínuo.
+        <br><br>
+        Meu aprendizado é baseado em projetos próprios, onde aplico na prática cada conceito estudado. Ao longo da minha jornada, venho construindo sistemas completos, desde a lógica de funcionamento até a organização de interface e banco de dados, buscando sempre clareza, organização e eficiência no código.
+        <br><br>
+        Tenho grande interesse em trabalhar com desenvolvimento internacional, criando aplicações robustas e úteis, mantendo uma mentalidade de evolução constante e aprendizado contínuo.
       </p>
-      
- <!-- =================  Pontos Fortes ================= -->
-<section class="hidden">
+    </div>
+  </div>
+</section>
+
+<!-- PONTOS FORTES -->
+<section class="pontos-fortes hidden">
   <h2>Meus Pontos Fortes na Programação</h2>
-  <div class="cards">
+  <div class="cards-center">
     <div class="card">💡 Forte lógica de programação aplicada a problemas reais</div>
     <div class="card">🧩 Organização clara de código e estrutura de sistemas</div>
     <div class="card">🚀 Transformo ideias em sistemas funcionais</div>
     <div class="card">📚 Persistência e aprendizado contínuo na prática</div>
-    <div class="card">🛠️ Desenvolvimento de soluções próprias (não apenas exercícios)</div>
+    <div class="card">🛠️ Desenvolvimento de soluções próprias</div>
     <div class="card">🧠 Planejamento de sistemas completos: interface + lógica + dados</div>
     <div class="card">⚙️ Foco em automação de processos e eficiência</div>
     <div class="card">📱 Estudo contínuo de Java e desenvolvimento mobile</div>
   </div>
-  </section>
-<section id="projetos" class="hidden">
-  <h2>Projetos em Destaque</h2>
 </section>
-  
 
-<!-- ================= HABILIDADES ================= -->
+<!-- OBJETIVO PROFISSIONAL -->
+<section class="hidden">
+  <h2>Objetivo Profissional</h2>
+  <div class="cards">
+    <div class="card">🎯 Me tornar um desenvolvedor profissional criando aplicações completas e bem estruturadas.</div>
+    <div class="card">💻 Desenvolver sistemas e aplicativos que resolvam problemas reais de forma simples e eficiente.</div>
+    <div class="card">📈 Crescer tecnicamente e contribuir com soluções práticas no desenvolvimento de software.</div>
+    <div class="card">🌎 Atuar em projetos internacionais e evoluir constantemente como programador.</div>
+  </div>
+</section>
+
+<!-- HABILIDADES -->
 <section class="hidden">
   <h2>Serviços & Habilidades</h2>
   <div class="cards">
@@ -294,13 +297,9 @@ Tenho grande interesse em trabalhar com desenvolvimento internacional, criando a
     <div class="card">🔧 Manutenção e Configuração de Computadores</div>
     <div class="card">🔗 Integração de Sistemas</div>
   </div>
-  
 </section>
-<section id="projetos" class="hidden">
-  <h2>Projetos em Destaque</h2>
 
-  
-<!-- ================= CONTATO ================= -->
+<!-- CONTATO -->
 <section id="contato" class="hidden">
   <h2>Contato</h2>
   <p>Estou disponível para oportunidades remotas e projetos internacionais.</p>
@@ -310,7 +309,6 @@ Tenho grande interesse em trabalhar com desenvolvimento internacional, criando a
 </section>
 
 <script>
-  // ANIMAÇÃO AO ROLAR A PÁGINA (apenas elementos com classe hidden)
 const elements = document.querySelectorAll('.hidden');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
