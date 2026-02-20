@@ -216,7 +216,7 @@
 
   <div class="conteudo-hero">
     <!-- FOTO DE PERFIL CENTRAL -->
-    <img src="perfil-emerson.jpg" alt="Foto Emerson" class="foto-perfil-topo">
+    <img src="EMERSON.JAVA.jpeg" alt="Foto Emerson" class="foto-perfil-topo">
 
     <h1>
       Desenvolvedor Java & Android <br>
@@ -281,15 +281,15 @@
 
 <script>
   // ANIMAÇÃO AO ROLAR A PÁGINA (apenas elementos com classe hidden)
-  const elements = document.querySelectorAll('.hidden');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('show');
-      }
-    });
+const elements = document.querySelectorAll('.hidden');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
   });
-  elements.forEach(el => observer.observe(el));
+});
+elements.forEach(el => observer.observe(el));
 </script>
 
 </body>
